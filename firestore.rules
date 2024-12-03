@@ -1,0 +1,32 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Allow any authenticated user to read and write any document in the 'users' collection
+    match /users/{userId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Retain existing rules for pending reservations
+    match /pending_reservations/{reservationId} {
+      allow read, update: if request.auth != null;
+      allow create: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    // Allow any authenticated user to read, write, or update the confirmed_reservations collection
+    match /confirmed_reservations/{reservationId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Allow authenticated users to read from the 'venues' collection
+    match /veneus/{venueId} {
+      allow read: if request.auth != null;  // Ensure that only authenticated users can read venues
+      allow create, update, delete: if request.auth != null; // Allow authenticated users to create, update, or delete venues
+    }
+
+    // Allow authenticated users to read from the 'eventMaster' collection
+    match /eventMaster/{venueId} {
+      allow read: if request.auth != null;  // Only allow authenticated users to read
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended" // Adds TypeScript-specific rules
+  ],
+  "parser": "@typescript-eslint/parser", // Parses TypeScript code for ESLint
+  "plugins": ["@typescript-eslint"], // Enables TypeScript linting rules
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "off", // Disable base rule as TS will handle this
+    "@typescript-eslint/no-unused-vars": "warn", // Better unused variable detection
+    "@typescript-eslint/no-explicit-any": "warn", // Discourage 'any' usage
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Optional: relax this rule
+    "@typescript-eslint/no-empty-function": "warn", // Warn about empty functions
+    "react-hooks/rules-of-hooks": "warn",
+   "react-hooks/exhaustive-deps": "warn",
+    "react/no-unescaped-entities": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

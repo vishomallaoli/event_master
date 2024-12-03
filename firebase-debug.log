@@ -1,0 +1,112 @@
+[debug] [2024-12-03T09:03:02.881Z] ----------------------------------------------------------------------
+[debug] [2024-12-03T09:03:02.885Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\BW214\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-12-03T09:03:02.885Z] CLI Version:   13.27.0
+[debug] [2024-12-03T09:03:02.886Z] Platform:      win32
+[debug] [2024-12-03T09:03:02.886Z] Node Version:  v20.18.0
+[debug] [2024-12-03T09:03:02.886Z] Time:          Tue Dec 03 2024 03:03:02 GMT-0600 (Central Standard Time)
+[debug] [2024-12-03T09:03:02.886Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-12-03T09:03:02.945Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-03T09:03:02.945Z] > authorizing via signed-in user (bw21406@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\BW214\OneDrive\Desktop\eventmaster\eventmaster
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-12-03T09:03:12.670Z] Using project from CLI flag: eventmaster-database
+[debug] [2024-12-03T09:03:12.671Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:12.671Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:12.672Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/eventmaster-database [none]
+[debug] [2024-12-03T09:03:13.032Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/eventmaster-database 200
+[debug] [2024-12-03T09:03:13.032Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/eventmaster-database {"projectId":"eventmaster-database","projectNumber":"594662023462","displayName":"Eventmaster Database","name":"projects/eventmaster-database","resources":{"hostingSite":"eventmaster-database"},"state":"ACTIVE","etag":"1_942ca27e-1457-4c85-b71a-eef86aacf50b"}
+[info] i  Using project eventmaster-database (Eventmaster Database) 
+[info] 
+=== Firestore Setup
+[debug] [2024-12-03T09:03:13.045Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:13.045Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:13.045Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/eventmaster-database/services/firestore.googleapis.com [none]
+[debug] [2024-12-03T09:03:13.045Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/eventmaster-database/services/firestore.googleapis.com x-goog-quota-user=projects/eventmaster-database
+[debug] [2024-12-03T09:03:13.390Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/eventmaster-database/services/firestore.googleapis.com 200
+[debug] [2024-12-03T09:03:13.390Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/eventmaster-database/services/firestore.googleapis.com [omitted]
+[debug] [2024-12-03T09:03:13.390Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:13.390Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:13.390Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default) [none]
+[debug] [2024-12-03T09:03:13.616Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default) 200
+[debug] [2024-12-03T09:03:13.616Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default) {"name":"projects/eventmaster-database/databases/(default)","uid":"3ff70ba5-a532-4878-ab47-82fff2e2b6d7","createTime":"2024-11-10T23:09:31.760739Z","updateTime":"2024-11-10T23:09:31.760739Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-12-03T08:03:15.453025Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IIPE9vuei4oDML7eybjC34kD"}
+[debug] [2024-12-03T09:03:13.616Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-12-03T09:03:13.617Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-12-03T09:03:13.617Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-03T09:03:13.617Z] > authorizing via signed-in user (bw21406@gmail.com)
+[debug] [2024-12-03T09:03:13.617Z] [iam] checking project eventmaster-database for permissions ["firebase.projects.get"]
+[debug] [2024-12-03T09:03:13.617Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:13.617Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:13.617Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/eventmaster-database:testIamPermissions [none]
+[debug] [2024-12-03T09:03:13.617Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/eventmaster-database:testIamPermissions x-goog-quota-user=projects/eventmaster-database
+[debug] [2024-12-03T09:03:13.617Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/eventmaster-database:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-12-03T09:03:13.751Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/eventmaster-database:testIamPermissions 200
+[debug] [2024-12-03T09:03:13.751Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/eventmaster-database:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-12-03T09:03:21.015Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:21.016Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:21.016Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/eventmaster-database/releases pageSize=10&pageToken=
+[debug] [2024-12-03T09:03:21.238Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/eventmaster-database/releases 200
+[debug] [2024-12-03T09:03:21.238Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/eventmaster-database/releases {"releases":[{"name":"projects/eventmaster-database/releases/cloud.firestore","rulesetName":"projects/eventmaster-database/rulesets/7b90e21c-b8f2-4135-a4d9-51adffabca73","createTime":"2024-11-10T23:09:35.878542Z","updateTime":"2024-12-03T08:57:37.987822Z"}]}
+[debug] [2024-12-03T09:03:21.238Z] Found ruleset: projects/eventmaster-database/rulesets/7b90e21c-b8f2-4135-a4d9-51adffabca73
+[debug] [2024-12-03T09:03:21.238Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:21.238Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:21.238Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/eventmaster-database/rulesets/7b90e21c-b8f2-4135-a4d9-51adffabca73 [none]
+[debug] [2024-12-03T09:03:21.396Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/eventmaster-database/rulesets/7b90e21c-b8f2-4135-a4d9-51adffabca73 200
+[debug] [2024-12-03T09:03:21.397Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/eventmaster-database/rulesets/7b90e21c-b8f2-4135-a4d9-51adffabca73 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-12-03T09:03:28.291Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:28.291Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:28.291Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:28.291Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:28.291Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-12-03T09:03:28.293Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-12-03T09:03:28.533Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-12-03T09:03:28.533Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/eventmaster-database/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2024-12-03T09:03:28.541Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-12-03T09:03:28.541Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/eventmaster-database/databases/(default)/collectionGroups/-/indexes {}
+[info] 
+=== Hosting Setup
+[debug] [2024-12-03T09:03:28.543Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:28.543Z] Checked if tokens are valid: true, expires at: 1733219551104
+[debug] [2024-12-03T09:03:28.543Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/eventmaster-database [none]
+[debug] [2024-12-03T09:03:28.806Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/eventmaster-database 200
+[debug] [2024-12-03T09:03:28.807Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/eventmaster-database {"projectId":"eventmaster-database","projectNumber":"594662023462","displayName":"Eventmaster Database","name":"projects/eventmaster-database","resources":{"hostingSite":"eventmaster-database"},"state":"ACTIVE","etag":"1_942ca27e-1457-4c85-b71a-eef86aacf50b"}
+[debug] [2024-12-03T09:05:19.705Z] Error: Command failed: npx --yes create-next-app@"12 - 15.0" -e hello-world out --use-npm --ts
+    at genericNodeError (node:internal/errors:984:15)
+    at wrappedFn (node:internal/errors:538:14)
+    at checkExecSyncError (node:child_process:891:11)
+    at execSync (node:child_process:963:15)
+    at Object.init (C:\Users\BW214\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:214:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async doSetup (C:\Users\BW214\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\hosting\index.js:120:13)
+    at async init (C:\Users\BW214\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:41:9)
