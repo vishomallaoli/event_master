@@ -47,14 +47,7 @@ export default function FAQ() {
           </p>
           <br />
 
-          <h3>Q: Who made this incredible platform?</h3>
-          <p>
-            A: It was a two-person adventure! <strong>Visho Malla Oli </strong> 
-            designed this beautiful frontend (you’re welcome), 
-            while <strong>Brayden Williams</strong> worked backend magic 
-            and tied it all together with integrations.
-          </p>
-          <br />
+    
 
           <h3>Q: How do I sign up?</h3>
           <p>
