@@ -131,7 +131,9 @@ const ViewConfirmedReservationsPage = () => {
 
   return (
     <div className="admin-container">
-      <h1>View Confirmed Reservations</h1>
+      <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>
+        ✅ View Confirmed Reservations</h1>
+
       {message && <p>{message}</p>}
 
       {loading ? (

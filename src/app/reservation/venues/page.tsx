@@ -36,8 +36,9 @@ const VenuesPage = () => {
   }, []);
 
   return (
-    (<div>
-      <h1>Available Venues</h1>
+    <div>
+      <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>
+        🌴 Available Venues </h1>
       {/* Check if there are venues */}
       {venues.length === 0 ? (
         <p>No venues found.</p>
@@ -50,7 +51,7 @@ const VenuesPage = () => {
               <p>Capacity: {venue.capacity}</p>
               <p>Price: ${venue.price}</p>
               <p>Features: {venue.features}</p>
-              <Link href={`/reservation/venues/${venue.id}`} legacyBehavior>
+              <Link href={`/reservation/venues/${venue.id}`}>
                 <button>View Venue</button>
               </Link>
 
@@ -59,6 +60,7 @@ const VenuesPage = () => {
           ))}
         </ul>
       )}
+
       <button
         onClick={() => router.push("/dashboard")} // Redirect to dashboard
         style={{
@@ -76,7 +78,7 @@ const VenuesPage = () => {
       >
         Back to Home
       </button>
-    </div>)
+    </div>
   );
 };
 

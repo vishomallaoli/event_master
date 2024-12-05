@@ -329,7 +329,10 @@ const ReviewReservationsPage = () => {
   
   return (
     <div>
-      <h1>Review Pending Reservations</h1>
+      <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>
+        🔎 Review Pending Reservations</h1>
+
+
   
       {message && <p>{message}</p>}
       {loading ? (
@@ -411,7 +414,7 @@ const ReviewReservationsPage = () => {
   
       {showWorkerModal && selectedReservationId && (
         <div className="worker-modal">
-         <h2>Select Workers for the Reservation: &apos;{selectedReservationName}&apos;</h2>
+          <h2>Select Workers for the Reservation: '{selectedReservationName}'</h2>
           <div className="worker-list">
             {workers.map(worker => (
               <div key={worker.id}>

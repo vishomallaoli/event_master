@@ -1,31 +1,100 @@
-/* src/app/reservation/venues/[venueId]/VenuePage.module.css */
+/* Venue List Page Styles */
 
-.venueContainer {
-  max-width: 600px;
-  margin: 0 auto;
+/* General page layout */
+.venueListContainer {
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  text-align: center;
+  background-color: #f4f4f9;
+  min-height: 100vh;
 }
 
-.venueName {
-  font-size: 2em;
+/* Title styling */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* List of venues */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual venue list item */
+li {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative;
+}
+
+/* Horizontal line separator */
+li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  margin-top: 20px;
+}
+
+/* Hover effect for the venue items */
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Link styling for venue names */
+a {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0070f3;
+  text-decoration: none;
   margin-bottom: 10px;
 }
 
-.venueDescription {
-  font-size: 1.2em;
-  margin-bottom: 15px;
+a:hover {
+  text-decoration: underline;
 }
 
-.venueAvailability {
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #4caf50; /* Green color for "Open" */
+/* Features and location */
+p {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0;
 }
 
-.venueAvailability.reserved {
-  color: #f44336; /* Red color for "Reserved" */
+/* Styling for the features section */
+.venueFeatures {
+  font-style: italic;
+  color: #444;
+}
+
+/* Styling for the location */
+.venueLocation {
+  color: #333;
+}
+
+/* Button styling for reservations */
+.reserveButton {
+  background-color: #0070f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.reserveButton:hover {
+  background-color: #005bb5;
 }

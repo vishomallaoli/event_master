@@ -110,7 +110,9 @@ const AssignAdminsPage = () => {
 
   return (
     <div className="admin-container">
-      <h1>Assign Admins</h1>
+      <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>
+        🪜 Promote Admins</h1>
+
       <div className="user-list">
         {users.map((user) => (
           <div key={user.id} className="user-item">

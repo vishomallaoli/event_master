@@ -71,6 +71,8 @@ const WorkersPage = () => {
 
   return (
     <div className="workers-page">
+      <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>
+      ⏰ View Your Work Schedule </h1>
       <h1>You are scheduled for the following reservations: </h1>
       {userReservations.length === 0 ? (
         <p>You are not scheduled for any reservations at this time.</p>

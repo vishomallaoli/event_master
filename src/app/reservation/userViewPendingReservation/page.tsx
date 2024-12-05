@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { getAuth } from "firebase/auth";
 
 const UserViewPendingReservation = () => {
-  const [reservations, setReservations] = useState<any[]>([]);
+  const [reservations, setReservations] = useState<any[]>([]); // To store reservations
   const router = useRouter();
 
   useEffect(() => {
@@ -72,7 +72,8 @@ const UserViewPendingReservation = () => {
 
   return (
     <div>
-      <h1>Pending Reservations</h1>
+      <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>
+      👀 Pending Reservations Requests </h1>
       {reservations.length === 0 ? (
         <p>No pending reservations found.</p>
       ) : (
@@ -117,7 +118,7 @@ const UserViewPendingReservation = () => {
           ))}
         </ul>
       )}
-      
+    {/* Back to Home Button */}
     <button
         onClick={() => router.push("/dashboard")} // Redirect to dashboard
         style={{

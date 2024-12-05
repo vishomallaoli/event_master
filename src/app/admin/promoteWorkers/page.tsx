@@ -112,7 +112,9 @@ const PromoteWorkersPage = () => {
 
   return (
     <div className="admin-container">
-      <h1>Promote to Worker</h1>
+      <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>
+        🪜 Promote Worker</h1>
+
       <div className="user-list">
         {users.map((user) => (
           <div key={user.id} className="user-item">

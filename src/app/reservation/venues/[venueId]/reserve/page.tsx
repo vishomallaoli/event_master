@@ -34,7 +34,7 @@ const ReservePage = () => {
         });
 
         setVenues(venueData); // Set venues
-        console.log("Fetched venues:", venueData); // Debugging log
+        console.log("Fetched venues:", venueData); // Debugging log to check venue data
       } catch (error) {
         console.error("Error fetching venues:", error);
       }

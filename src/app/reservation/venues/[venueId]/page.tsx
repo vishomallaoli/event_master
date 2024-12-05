@@ -85,7 +85,7 @@ const VenueDetails: React.FC<VenueDetailsProps> = ({ params }) => {
     
     {/* Back to Venues Button */}
     <button
-    onClick={() => router.push("/reservation/venues")}
+    onClick={() => router.push("/reservation/venues")} // Go back to the venues page
     style={{
       display: "block",
       margin: "20px auto",
