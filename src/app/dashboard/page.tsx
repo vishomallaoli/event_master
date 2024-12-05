@@ -1,14 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { signOut, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth, db } from "@/lib/firebaseConfig";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { doc, getDoc } from "firebase/firestore";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Navbar from "@/components/ui/Navbar2";
 
 const DashboardPage = () => {
   const [user, setUser] = useState<any>(null);
+  const [userName, setUserName] = useState<string>(""); // To store user's name
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [isWorker, setIsWorker] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
@@ -17,30 +20,27 @@ const DashboardPage = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (!currentUser) {
-        // If no user is signed in, redirect to sign-in page
-        <Link href="/signin"></Link>
+        router.push("/signin");
       } else {
-        // If there is a user, set the user state
         setUser(currentUser);
 
         try {
-          // Fetch the user's document from the 'users' collection
+          // Fetch user's document from Firestore
           const userDocRef = doc(db, "users", currentUser.uid);
           const userDoc = await getDoc(userDocRef);
 
           if (userDoc.exists()) {
             const userData = userDoc.data();
+            setUserName(userData.name || "User"); // Fetch and set the name
             setIsAdmin(userData.isAdmin || false);
             setIsWorker(userData.isWorker || false);
           } else {
-            console.warn("No user document found");
-            setIsAdmin(false);
-            setIsWorker(false);
+            console.warn("User document does not exist in Firestore.");
+            setUserName("User");
           }
         } catch (error) {
           console.error("Error fetching user document:", error);
-          setIsAdmin(false);
-          setIsWorker(false);
+          setUserName("User");
         }
       }
       setLoading(false);
@@ -49,87 +49,90 @@ const DashboardPage = () => {
     return () => unsubscribe();
   }, [router]);
 
-  // Handle sign out
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log("Signed out successfully");
-        router.push("/signin"); // Back to sign-in page after sign out
+        router.push("/signin");
       })
-      .catch((error) => {
-        console.error("Error signing out:", error);
-      });
+      .catch((error) => console.error("Error signing out:", error));
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className="text-center mt-20">Loading...</p>;
   }
 
   return (
-    (<div className="dashboard-container">
-      <button className="sign-out-btn" onClick={handleSignOut}>
-        Sign Out
-      </button>
-      <h1>Dashboard</h1>
-      {/*"View Venues" button */}
-      <div className="action-buttons">
-        <Link href="/reservation/venues" legacyBehavior>
-          <button className="action-button">View Venues</button>
-        </Link>
-      </div>
-      <Link href="/reservation/userViewPendingReservation" legacyBehavior>
-        <button className="action-button">View Your Pending Reservation Requests</button>
-      </Link>
-      <div className="button-divider" />
-      {/* Conditionally render admin-only buttons */}
-      {isAdmin && (
-        <div>
-          <br />
-          <h1>Admins: </h1>
+    <div className="dashboard-container max-w-4xl mx-auto p-6 space-y-8">
+      <Navbar />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "calc(100vh - 200px)",
+          textAlign: "center",
+        }}
+      >
+        {/* Display the user's name */}
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+          👋🏻 Hi, {userName}!
+        </h1>
 
-
-        <div className="action-buttons">
-          <Link href="/admin/reviewReservations" legacyBehavior>
-            <button className="action-button">Review pending reservations</button>
-          </Link>
-          <div className="button-divider" />
-          <Link href="/admin/viewConfirmedReservations" legacyBehavior>
-            <button className="action-button">View confirmed reservations</button>
-          </Link>
-          <div className="button-divider" />
-          <Link href="/admin/assignAdmins" legacyBehavior>
-            <button className="action-button">Promote Admins</button>
-          </Link>
-          <div className="button-divider" />
-          <Link href="/admin/promoteWorkers" legacyBehavior>
-            <button className="action-button">Promote Workers</button>
-          </Link>
-          <div className="button-divider" />
-          <Link href="/admin/createVenue" legacyBehavior>
-            <button className="action-button">Add Venues</button>
-          </Link>
-          <div className="button-divider" />
-          <Link href="/admin/editVenue" legacyBehavior>
-            <button className="action-button">Edit Venues</button>
-          </Link>
-        </div>
-      </div>
-        
-      )}
-      {/* Conditionally render worker-only button */}
-      {isWorker && (
-        <div>
-          <br />
-          <h1></h1>
-          <h1>Workers:</h1>
-          <div className="action-buttons">
-            <Link href="/workers" legacyBehavior>
-              <button className="action-button">View Your Work Schedule</button>
-            </Link>
+        <section>
+          <h2 className="text-xl font-medium mb-4">Actions</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Button asChild>
+              <Link href="/reservation/venues">View Venues</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/reservation/userViewPendingReservation">
+                View Your Pending Reservation Requests
+              </Link>
+            </Button>
           </div>
-        </div>
-)}
-    </div>)
+        </section>
+
+        {isAdmin && (
+          <section>
+            <h2 className="text-xl font-medium mb-4">Admin Actions</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <Button asChild>
+                <Link href="/admin/reviewReservations">Review Reservations</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/admin/viewConfirmedReservations">
+                  View Confirmed Reservations
+                </Link>
+              </Button>
+              <Button asChild>
+                <Link href="/admin/assignAdmins">Promote Admins</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/admin/promoteWorkers">Promote Workers</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/admin/createVenue">Add Venues</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/admin/editVenue">Edit Venues</Link>
+              </Button>
+            </div>
+          </section>
+        )}
+
+        {isWorker && (
+          <section>
+            <h2 className="text-xl font-medium mb-4">Worker Actions</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <Button asChild>
+                <Link href="/workers">View Your Work Schedule</Link>
+              </Button>
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
   );
 };
 
